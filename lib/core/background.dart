@@ -11,26 +11,11 @@ class AppBackground extends StatelessWidget {
       children: [
         Positioned.fill(
           child: Image.asset(
-            'assets/images/bg.png',
+            "assets/images/bg.png",
             fit: BoxFit.cover,
           ),
         ),
-
-        Positioned.fill(
-          child: Container(
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                colors: [
-                  Colors.black.withOpacity(0.6),
-                  Colors.black.withOpacity(0.9),
-                ],
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-              ),
-            ),
-          ),
-        ),
-
+        Container(color: Colors.black.withOpacity(0.6)),
         child,
       ],
     );

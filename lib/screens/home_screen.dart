@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import '../services/api_service.dart';
 import '../models/song.dart';
+import '../services/api_service.dart';
 import '../widgets/song_tile.dart';
-import '../widgets/mini_player.dart';
 import '../widgets/search_bar.dart';
 import '../core/background.dart';
-import 'favorites_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -16,7 +14,8 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   List<Song> songs = [];
-  List<Song> allSongs = [];
+  List<Song> filtered = [];
+  bool loading = true;
 
   @override
   void initState() {
@@ -26,9 +25,22 @@ class _HomeScreenState extends State<HomeScreen> {
 
   void loadSongs() async {
     final data = await ApiService().fetchSongs();
+
+    if (!mounted) return;
+
     setState(() {
       songs = data;
-      allSongs = data;
+      filtered = data;
+      loading = false;
+    });
+  }
+
+  void search(String q) {
+    setState(() {
+      filtered = songs
+          .where((s) =>
+              s.title.toLowerCase().contains(q.toLowerCase()))
+          .toList();
     });
   }
 
@@ -41,77 +53,31 @@ class _HomeScreenState extends State<HomeScreen> {
             children: [
               const SizedBox(height: 10),
 
-              // 🔥 HEADER (TITLE + FAVORITES BUTTON)
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 12),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    const Text(
-                      'Pulse Player',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 26,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-
-                    IconButton(
-                      icon: const Icon(Icons.favorite, color: Colors.white),
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (_) => const FavoritesScreen(),
-                          ),
-                        );
-                      },
-                    ),
-                  ],
-                ),
+              const Text(
+                "Pulse Player",
+                style: TextStyle(color: Colors.white, fontSize: 26),
               ),
 
-              const SizedBox(height: 10),
+              SearchBarWidget(onChanged: search),
 
-              // 🔍 SEARCH BAR
-              SearchBarWidget(
-                onChanged: (query) {
-                  setState(() {
-                    songs = allSongs
-                        .where((s) => s.title
-                            .toLowerCase()
-                            .contains(query.toLowerCase()))
-                        .toList();
-                  });
-                },
-              ),
-
-              const SizedBox(height: 5),
-
-              // 🎧 SONG LIST
               Expanded(
-                child: songs.isEmpty
+                child: loading
                     ? const Center(
-                        child: Text(
-                          "No songs found",
-                          style: TextStyle(color: Colors.white70),
+                        child: CircularProgressIndicator(
+                          color: Colors.white,
                         ),
                       )
                     : ListView.builder(
-                        physics: const BouncingScrollPhysics(),
-                        itemCount: songs.length,
-                        itemBuilder: (c, i) {
+                        itemCount: filtered.length,
+                        itemBuilder: (_, i) {
                           return SongTile(
-                            song: songs[i],
-                            list: songs,
+                            song: filtered[i],
+                            list: filtered,
                             index: i,
                           );
                         },
                       ),
               ),
-
-              // 🎵 MINI PLAYER
-              const MiniPlayer(),
             ],
           ),
         ),
