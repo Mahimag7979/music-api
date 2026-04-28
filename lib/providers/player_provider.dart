@@ -1,55 +1,77 @@
 import 'package:flutter/material.dart';
+import 'package:just_audio/just_audio.dart';
 import '../models/song.dart';
-import '../services/audio_service.dart';
 
 class PlayerProvider extends ChangeNotifier {
-  final AudioService audio = AudioService();
+  final AudioPlayer player = AudioPlayer();
 
   List<Song> playlist = [];
-  int currentIndex = -1;
-  bool playing = false;
+  bool _initialized = false;
 
-  Song? get current =>
-      (currentIndex >= 0 && currentIndex < playlist.length)
-          ? playlist[currentIndex]
-          : null;
+  PlayerProvider() {
+    player.playerStateStream.listen((_) {
+      notifyListeners();
+    });
+  }
 
-  Future<void> play(List<Song> list, int index) async {
+  bool get isPlaying => player.playing;
+
+  Song? get current {
+    final i = player.currentIndex;
+    if (i == null || i < 0 || i >= playlist.length) return null;
+    return playlist[i];
+  }
+
+  Stream<Duration> get positionStream => player.positionStream;
+  Stream<Duration?> get durationStream => player.durationStream;
+
+  // 🔥 LOAD PLAYLIST ONCE (KEY FIX)
+  Future<void> initPlaylist(List<Song> list) async {
+    if (_initialized) return;
+
     playlist = list;
-    currentIndex = index;
 
-    final song = playlist[index];
+    final sources = list
+        .map((s) => AudioSource.uri(Uri.parse(s.url)))
+        .toList();
 
-    try {
-      await audio.player.stop();
-      await audio.playUrl(song.url);
-      playing = true;
-    } catch (e) {
-      debugPrint("PLAY ERROR: $e");
-      playing = false;
-    }
+    await player.setAudioSource(
+      ConcatenatingAudioSource(children: sources),
+    );
 
-    notifyListeners();
+    _initialized = true;
   }
-Future<void> next() async {
-  if (currentIndex < playlist.length - 1) {
-    await play(playlist, currentIndex + 1);
-  }
-}
 
-Future<void> previous() async {
-  if (currentIndex > 0) {
-    await play(playlist, currentIndex - 1);
+  // 🚀 INSTANT PLAY
+  Future<void> play(List<Song> list, int index) async {
+    await initPlaylist(list);
+    await player.seek(Duration.zero, index: index);
+    await player.play();
   }
-}
+
   Future<void> toggle() async {
-    if (audio.player.playing) {
-      await audio.player.pause();
-      playing = false;
+    if (player.playing) {
+      await player.pause();
     } else {
-      await audio.player.play();
-      playing = true;
+      await player.play();
     }
-    notifyListeners();
+  }
+
+  Future<void> next() async {
+    await player.seekToNext();
+  }
+
+  Future<void> previous() async {
+    await player.seekToPrevious();
+  }
+
+  Future<void> seek(Duration d) async {
+    await player.seek(d);
+  }
+
+  @override
+  void dispose() {
+    player.dispose();
+    super.dispose();
   }
 }
