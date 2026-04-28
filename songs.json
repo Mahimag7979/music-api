@@ -2,51 +2,71 @@
   {
     "id": "1",
     "title": "Chill Beat",
-    "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
+    "artist": "SoundHelix",
+    "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
+    "image": "https://picsum.photos/200?random=1"
   },
   {
     "id": "2",
     "title": "Focus Flow",
-    "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3"
+    "artist": "SoundHelix",
+    "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3",
+    "image": "https://picsum.photos/200?random=2"
   },
   {
     "id": "3",
     "title": "Night Vibe",
-    "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3"
+    "artist": "SoundHelix",
+    "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3",
+    "image": "https://picsum.photos/200?random=3"
   },
   {
     "id": "4",
     "title": "Deep Mood",
-    "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3"
+    "artist": "SoundHelix",
+    "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3",
+    "image": "https://picsum.photos/200?random=4"
   },
   {
     "id": "5",
     "title": "Soft Piano",
-    "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3"
+    "artist": "SoundHelix",
+    "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3",
+    "image": "https://picsum.photos/200?random=5"
   },
   {
     "id": "6",
     "title": "Energy Boost",
-    "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-6.mp3"
+    "artist": "SoundHelix",
+    "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-6.mp3",
+    "image": "https://picsum.photos/200?random=6"
   },
   {
     "id": "7",
     "title": "Calm Waves",
-    "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-7.mp3"
+    "artist": "SoundHelix",
+    "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-7.mp3",
+    "image": "https://picsum.photos/200?random=7"
   },
   {
     "id": "8",
     "title": "Morning Light",
-    "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3"
+    "artist": "SoundHelix",
+    "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3",
+    "image": "https://picsum.photos/200?random=8"
   },
   {
     "id": "9",
     "title": "Dreamscape",
-    "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-9.mp3"
+    "artist": "SoundHelix",
+    "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-9.mp3",
+    "image": "https://picsum.photos/200?random=9"
   },
   {
     "id": "10",
     "title": "Relax Mode",
-    "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-10.mp3"
+    "artist": "SoundHelix",
+    "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-10.mp3",
+    "image": "https://picsum.photos/200?random=10"
   }
 ]
