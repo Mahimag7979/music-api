@@ -1,72 +1,20 @@
 [
-  {
-    "id": "1",
-    "title": "Chill Beat",
-    "artist": "SoundHelix",
-    "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
-    "image": "https://picsum.photos/200?random=1"
-  },
-  {
-    "id": "2",
-    "title": "Focus Flow",
-    "artist": "SoundHelix",
-    "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3",
-    "image": "https://picsum.photos/200?random=2"
-  },
-  {
-    "id": "3",
-    "title": "Night Vibe",
-    "artist": "SoundHelix",
-    "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3",
-    "image": "https://picsum.photos/200?random=3"
-  },
-  {
-    "id": "4",
-    "title": "Deep Mood",
-    "artist": "SoundHelix",
-    "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3",
-    "image": "https://picsum.photos/200?random=4"
-  },
-  {
-    "id": "5",
-    "title": "Soft Piano",
-    "artist": "SoundHelix",
-    "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3",
-    "image": "https://picsum.photos/200?random=5"
-  },
-  {
-    "id": "6",
-    "title": "Energy Boost",
-    "artist": "SoundHelix",
-    "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-6.mp3",
-    "image": "https://picsum.photos/200?random=6"
-  },
-  {
-    "id": "7",
-    "title": "Calm Waves",
-    "artist": "SoundHelix",
-    "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-7.mp3",
-    "image": "https://picsum.photos/200?random=7"
-  },
-  {
-    "id": "8",
-    "title": "Morning Light",
-    "artist": "SoundHelix",
-    "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3",
-    "image": "https://picsum.photos/200?random=8"
-  },
-  {
-    "id": "9",
-    "title": "Dreamscape",
-    "artist": "SoundHelix",
-    "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-9.mp3",
-    "image": "https://picsum.photos/200?random=9"
-  },
-  {
-    "id": "10",
-    "title": "Relax Mode",
-    "artist": "SoundHelix",
-    "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-10.mp3",
-    "image": "https://picsum.photos/200?random=10"
-  }
+  {"id":"1","title":"Chill Beat","artist":"SoundHelix","genre":"trending","url":"https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3","image":"https://picsum.photos/200?random=1"},
+  {"id":"2","title":"Focus Flow","artist":"SoundHelix","genre":"pop","url":"https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3","image":"https://picsum.photos/200?random=2"},
+  {"id":"3","title":"Night Vibe","artist":"SoundHelix","genre":"rap","url":"https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3","image":"https://picsum.photos/200?random=3"},
+  {"id":"4","title":"Deep Mood","artist":"SoundHelix","genre":"rock","url":"https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3","image":"https://picsum.photos/200?random=4"},
+  {"id":"5","title":"Soft Piano","artist":"SoundHelix","genre":"classical","url":"https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3","image":"https://picsum.photos/200?random=5"},
+  {"id":"6","title":"Energy Boost","artist":"SoundHelix","genre":"dance","url":"https://www.soundhelix.com/examples/mp3/SoundHelix-Song-6.mp3","image":"https://picsum.photos/200?random=6"},
+  {"id":"7","title":"Calm Waves","artist":"SoundHelix","genre":"jazz","url":"https://www.soundhelix.com/examples/mp3/SoundHelix-Song-7.mp3","image":"https://picsum.photos/200?random=7"},
+  {"id":"8","title":"Urban Beat","artist":"SoundHelix","genre":"rap","url":"https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3","image":"https://picsum.photos/200?random=8"},
+  {"id":"9","title":"Summer Pop","artist":"SoundHelix","genre":"pop","url":"https://www.soundhelix.com/examples/mp3/SoundHelix-Song-9.mp3","image":"https://picsum.photos/200?random=9"},
+  {"id":"10","title":"Rock Storm","artist":"SoundHelix","genre":"rock","url":"https://www.soundhelix.com/examples/mp3/SoundHelix-Song-10.mp3","image":"https://picsum.photos/200?random=10"},
+  {"id":"11","title":"Electric Soul","artist":"SoundHelix","genre":"electronic","url":"https://www.soundhelix.com/examples/mp3/SoundHelix-Song-11.mp3","image":"https://picsum.photos/200?random=11"},
+  {"id":"12","title":"Groove Master","artist":"SoundHelix","genre":"rnb","url":"https://www.soundhelix.com/examples/mp3/SoundHelix-Song-12.mp3","image":"https://picsum.photos/200?random=12"},
+  {"id":"13","title":"Jazz Nights","artist":"SoundHelix","genre":"jazz","url":"https://www.soundhelix.com/examples/mp3/SoundHelix-Song-13.mp3","image":"https://picsum.photos/200?random=13"},
+  {"id":"14","title":"Dance Floor","artist":"SoundHelix","genre":"dance","url":"https://www.soundhelix.com/examples/mp3/SoundHelix-Song-14.mp3","image":"https://picsum.photos/200?random=14"},
+  {"id":"15","title":"Moonlight","artist":"SoundHelix","genre":"classical","url":"https://www.soundhelix.com/examples/mp3/SoundHelix-Song-15.mp3","image":"https://picsum.photos/200?random=15"},
+  {"id":"16","title":"Trending Hit","artist":"SoundHelix","genre":"trending","url":"https://www.soundhelix.com/examples/mp3/SoundHelix-Song-16.mp3","image":"https://picsum.photos/200?random=16"},
+  {"id":"17","title":"Pop Star","artist":"SoundHelix","genre":"pop","url":"https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3","image":"https://picsum.photos/200?random=17"},
+  {"id":"18","title":"Hip Hop King","artist":"SoundHelix","genre":"rap","url":"https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3","image":"https://picsum.photos/200?random=18"}
 ]
