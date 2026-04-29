@@ -4,24 +4,33 @@ import '../providers/player_provider.dart';
 import '../widgets/song_tile.dart';
 import '../core/theme.dart';
 
-class DownloadsScreen extends StatelessWidget {
-  const DownloadsScreen({super.key});
+class FavouritesScreen extends StatelessWidget {
+  const FavouritesScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     final provider = context.watch<PlayerProvider>();
-    final songs = provider.downloadedSongs;
+    final songs = provider.favoriteSongs;
 
     return Scaffold(
-      appBar: AppBar(title: const Text('Downloads')),
+      backgroundColor: Colors.transparent,
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        title: const Text('Favourites'),
+      ),
       body: songs.isEmpty
           ? const Center(
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Icon(Icons.download_outlined, color: AppTheme.textSecondary, size: 56),
+                  Icon(Icons.favorite_border,
+                      color: AppTheme.textSecondary, size: 56),
                   SizedBox(height: 12),
-                  Text('No downloaded songs yet', style: TextStyle(color: AppTheme.textSecondary)),
+                  Text(
+                    'No favourites yet.\nTap ❤️ on any song to save it.',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(color: AppTheme.textSecondary),
+                  ),
                 ],
               ),
             )

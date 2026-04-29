@@ -8,14 +8,24 @@ class AppBackground extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Stack(
+      fit: StackFit.expand,
       children: [
-        Positioned.fill(
-          child: Image.asset(
-            "assets/images/bg.png",
-            fit: BoxFit.cover,
+        Image.asset(
+          'assets/images/bg.png',
+          fit: BoxFit.cover,
+        ),
+        Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [
+                Colors.black.withOpacity(0.55),
+                Colors.black.withOpacity(0.90),
+              ],
+            ),
           ),
         ),
-        Container(color: Colors.black.withOpacity(0.6)),
         child,
       ],
     );
